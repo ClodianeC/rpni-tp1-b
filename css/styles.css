@@ -14,6 +14,7 @@
  ** Entête
  *** Recherche 
  ** Main
+ *** Flex main
  *** Flex item main
  *** Liens item main
  ** Footer
@@ -517,7 +518,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5rem;
-  color: #fff;
   margin: 0;
 }
 
@@ -528,6 +528,7 @@ header {
 
 .logo_separation {
   margin: 0 0.7rem;
+  color: #FFF;
 }
 
 .logo_site {
@@ -543,13 +544,13 @@ header {
 
 .logo_page-actuelle:link,
 .logo_page-actuelle:visited {
-  color: #fff;
+  color: #FFF;
   text-decoration: none;
 }
 
 .logo_page-actuelle:hover,
 .logo_page-actuelle:active {
-  color: #fff;
+  color: #FFF;
   text-decoration: underline;
 }
 
@@ -621,8 +622,8 @@ header {
 }
 
 .barre_recherche {
-  min-width: 40rem;
   outline: none;
+  min-width: 20rem;
 }
 
 .groupe_recherche {
@@ -638,8 +639,40 @@ header {
   max-height: 1.6rem;
 }
 
+@media (min-width: 600px) {
+  .barre_recherche {
+    min-width: 30rem;
+  }
+}
+@media (min-width: 800px) {
+  .barre_recherche {
+    min-width: 40rem;
+  }
+}
 /** Main
 ========================================================================== */
+.options-sujet {
+  margin: 0 2rem;
+}
+
+/*** Flex main
+========================================================================== */
+.options-sujet {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+}
+
+@media (min-width: 800px) {
+  .options-sujet {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .sujet {
+    max-width: 50%;
+  }
+}
 /*** Flex item main
 ========================================================================== */
 .sujet {
@@ -653,6 +686,7 @@ header {
 
 .sujet_img {
   grid-area: icone;
+  min-width: 100%;
 }
 
 .sujet_text {
@@ -686,10 +720,12 @@ header {
 /** Footer
 ========================================================================== */
 footer {
-  color: #fff;
+  color: #FFF;
   display: flex;
   justify-content: space-between;
   padding: 0 3rem 3rem 3rem;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .copyright_logo {
@@ -715,6 +751,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  margin: 3rem 0 1rem 1rem;
 }
 
 .menu_contact-info {
