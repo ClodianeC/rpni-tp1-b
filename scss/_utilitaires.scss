@@ -2,12 +2,10 @@
    ========================================================================== */
 
 /****** Variables (peuvent être utilisées dans tous les fichiers) *******/
-:root {
-    --couleur-texte: #000;
-    --couleur-lien: #4C5FD5;
-    --couleur-priMaire: #FFF;
-    --couleur-contraste:#DADBF1;
-}
+$couleur-texte: #000;
+$couleur-lien: #5659D5;
+$couleur-primaire: #FFF;
+$couleur-contraste:#DADBF1;
 
 /*** Clearfix ***/
 .clearfix::after {

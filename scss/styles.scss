@@ -8,18 +8,249 @@
  * Utilitaires
  * Charte typographique
  * Mise en page
+ ** Page
+ ** Header
+ *** Lien logo Abstract
+ *** Boutons header
+ ** Entête
+ *** Recherche 
+ ** Main
+ *** Flex item main
+ *** Liens item main
+ ** Footer
+ *** Liens footer
  */
 
 /* Normalize
    ========================================================================== */
-@import url(normalize.css);
+@import "_normalize.scss";
 
 /* Utilitaires
    ========================================================================== */
-@import url(utilitaires.css);
+@import "_utilitaires.scss";
 
 /* Charte typographique
    ========================================================================== */
-@import url(typo.css);
+@import "_typo.scss";
 
-/* Mise en page
+
+
+/* Mise en page*/
+    /** Page
+    ========================================================================== */
+    .header{
+        background-color: #000;
+    }
+    .entete{
+        background-color: $couleur-contraste;
+    }
+    footer{
+        background-color: #000;
+    }
+    main{
+        margin: 0;
+    }
+
+    /** Header
+   ========================================================================== */
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5rem;
+        color: #fff;
+        margin: 0;
+    }
+    .logo_img{
+        max-width: 30px;
+        margin: .5rem;
+    }
+    .logo_separation{
+        margin: 0 0.7rem;
+    }
+    .logo_site{
+        display: flex;
+        align-items: center;
+    }
+    .logo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .logo_page-actuelle:link,
+    .logo_page-actuelle:visited{
+        color: #fff;
+        text-decoration: none;
+    }
+    .logo_page-actuelle:hover,
+    .logo_page-actuelle:active{
+        color: #fff;
+        text-decoration: underline;
+    }
+        /*** Lien logo Abstract
+        ========================================================================== */
+        .logo_site:link,
+        .logo_site:visited{
+            color: $couleur-primaire;
+            text-decoration: none;
+            opacity: 100%;
+            transition: 0.5s;
+        }
+        .logo_site:hover,
+        .logo_site:active{
+            text-decoration: none;
+            opacity: 70%;
+            transition: 0.5s;
+        }
+        /*** Boutons header
+        ========================================================================== */
+        .request, 
+        .sign-in{
+            padding: 0.7rem 2rem;
+            border-radius: 0.6rem;
+            color: $couleur-primaire;
+        }
+        .request{
+            background-color: #191A1B;
+            border: 1px solid $couleur-primaire;
+        }
+        .sign-in{
+            background-color: $couleur-lien;
+            border-style: none;
+        }
+        .sign-in:hover{
+            background-color: $couleur-primaire;
+            border-style: none;
+            color: #191A1B;
+            transition: 0.5s;
+        }
+
+    /** Entête
+    ========================================================================== */
+    .entete{
+        margin: 0;
+        padding-top: 3rem;
+    }
+    .titre{
+        text-align: center;
+    }
+    .recherche{
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+        /*** Recherche
+        ========================================================================== */
+        .bouton_recherche,
+        .barre_recherche{
+            background-color: $couleur-primaire;
+            border: none; 
+        }
+        .barre_recherche{
+            min-width: 40rem;
+            outline: none;
+        }
+        .groupe_recherche{
+            background-color: $couleur-primaire;
+            max-width: fit-content;
+            margin: auto;
+            border-radius: 0.7rem;
+            padding: 1.6rem;
+            border: 1px solid $couleur-lien;
+        }
+        .bouton_recherche img{
+            max-height: 1.6rem;
+        }
+
+    /** Main
+    ========================================================================== */
+        /*** Flex item main
+        ========================================================================== */
+        .sujet{
+            margin-bottom: 2em;
+            padding: 1rem;
+        }
+        .sujet_titre{
+            grid-area: titre;
+        }
+        .sujet_img{
+            grid-area: icone;
+            // max-width: 75px;
+        }
+        .sujet_text{
+            grid-area: texte;
+        }
+        .sujet_lien{
+            grid-area: lien;
+        }
+        .sujet{
+            display: grid;
+            grid-column-gap: 2rem;
+            grid-template-areas: 
+            "icone titre"
+            "icone texte"
+            "icone lien";
+            grid-template-columns: 1fr 3fr;
+        }
+        /*** Liens item main
+        ========================================================================== */
+        .sujet_lien:link,
+        .sujet_lien:visited{
+            color: $couleur-lien;
+            text-decoration: none;
+        }
+        .sujet_lien:hover,
+        .sujet_lien:active{
+            text-decoration: underline;
+        }
+
+    /** Footer
+    ========================================================================== */
+    footer{
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3rem 3rem 3rem;
+    }
+    .copyright_logo{
+        max-width: 30px;
+        margin-bottom: 1rem;
+    }
+    .menu_liste{
+        list-style: none;
+        padding: 0;
+    }
+    .copyright_text{
+        margin: 0;
+        font-size: 1.2rem;
+    }
+    .menu{
+        margin: 0 1rem;
+    }
+    .copyright{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    .menu_contact-info{
+        padding: 0;
+        margin: 0;
+    }
+    .menu_h3{
+        padding: 1rem 0 0 0;
+        margin: 0;
+    }
+        /*** Liens footer
+        ========================================================================== */
+        .menu_item a:link,
+        .menu_item a:visited,
+        .menu_contact-info a:link,
+        .menu_contact-info a:visited{
+            color: $couleur-primaire;
+            text-decoration: none;
+        }
+        .menu_item a:hover,
+        .menu_item a:active,
+        .menu_contact-info a:hover,
+        .menu_contact-info a:active{
+            text-decoration: underline;
+        }
